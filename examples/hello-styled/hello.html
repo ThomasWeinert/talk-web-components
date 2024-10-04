@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+  <title>Hello!</title>
+</head>
+<body>
+<div>
+  <cui-hello target="Universe"></cui-hello>
+</div>
+<div>
+  <label for="target">Target</label>
+  <br>
+  <input
+    id="target"
+    onInput="document.querySelector('cui-hello').setAttribute('target', this.value);">
+</div>
+<script type="application/javascript" src="hello.component.js"></script>
+</body>
+</html>
