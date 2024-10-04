@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <title>Web Components</title>
+
+  <meta name="author" content="Thomas Weinert">
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:website" content="@ThomasWeinert"/>
+  <meta property="og:url" content="https://thomas.weinert.info/talk-git/"/>
+  <meta property="og:title" content="Talk: Web Components"/>
+  <meta property="og:description"
+        content="An introduction into web components."/>
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="./node_modules/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" id="theme" href="./node_modules/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" id="highlight-theme" href="./themes/code/github.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+      <section>
+        <h1>Web Components</h1>
+        <small>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline-icon">
+            <use href="images/icons/mastodon.svg#icon"/>
+          </svg>
+          @thw@phpc.social
+        </small>
+      </section>
+      <section>
+        <h2>About Me</h2>
+        <div style="display: flex; align-items: center; justify-content: space-around;">
+          <ul>
+            <li>Application Developer</li>
+            <li>Programming >= 25 years</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <img src="./images/skills.svg" alt=""/>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Overview</h2>
+      </section>
+      <section>
+        <h2>What?</h2>
+        <ul>
+          <li class="fragment">Custom HTML elements</li>
+          <li class="fragment">Shadow DOM</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Why?</h2>
+        <ul>
+          <li class="fragment">Standard browser api</li>
+          <li class="fragment">No framework runtime</li>
+          <li class="fragment">Small bootstrap</li>
+          <li class="fragment">Framework independent</li>
+        </ul>
+      </section>
+      <section>
+        <h2>How?</h2>
+        <ul>
+          <li class="fragment">
+            <h4>Autonomous Custom Element</h4>
+            <pre><code class="language-html">&lt;hello-world>&lt;/hello-world></code></pre>
+          </li>
+          <li class="fragment">
+            <h4>Custom Built-In Elements</h4>
+            <pre><code class="language-html">&lt;span is="hello-world">&lt;/span></code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Can I Use?</h2>
+        <ul>
+          <li class="fragment">77.76% + 18.22% = 95.98%</li>
+          <li class="fragment">Safari, only autonomous custom element</li>
+          <li class="fragment">Polyfills!</li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Hello World</h2>
+        <pre><code class="language-js" data-sample='examples/hello-world/hello-world.component.js'></code></pre>
+      </section>
+      <section>
+        <iframe src="./examples/hello-world/hello-world.html"></iframe>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>API</h2>
+      </section>
+      <section>
+        <h2>Constructor Restrictions</h2>
+        <ul>
+          <li>No Attributes Write
+            <ul>
+              <li>No DataSet Write</li>
+              <li>No ClassList Write</li>
+            </ul>
+          </li>
+          <li>No Global Event Listeners</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Connected Callback</h2>
+        <pre><code class="language-js"
+                   data-sample='examples/click-tracker/click-tracker.component.js#12-17'></code></pre>
+      </section>
+      <section>
+        <h2>Disconnected Callback</h2>
+        <pre><code class="language-js"
+                   data-sample='examples/click-tracker/click-tracker.component.js#19-21'></code></pre>
+      </section>
+      <section>
+        <iframe src="./examples/click-tracker/click-tracker.html"></iframe>
+      </section>
+      <section>
+        <h2>AttributeChanged Callback</h2>
+        <pre><code class="language-js" data-sample='examples/hello/hello.component.js#1-6,18-27'></code></pre>
+      </section>
+      <section>
+        <pre><code class="language-html" data-sample='examples/hello/hello.html#7,12-14'></code></pre>
+        <iframe src="./examples/hello/hello.html"></iframe>
+      </section>
+      <section>
+        <h2>Styles</h2>
+        <pre><code class="language-js" data-sample='examples/hello-styled/hello.component.js#1,7-21'></code></pre>
+      </section>
+      <section>
+        <iframe src="./examples/hello-styled/hello.html"></iframe>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Slots</h2>
+      </section>
+      <section>
+        <pre><code class="language-js" data-sample='examples/app-shell/app-shell.component.js#1-15'></code></pre>
+      </section>
+      <section>
+        <pre><code class="language-js" data-sample='examples/app-shell/app-shell.component.js#16-26'></code></pre>
+      </section>
+      <section>
+        <pre><code class="language-html" data-sample='examples/app-shell/app-shell.html#6-10'></code></pre>
+      </section>
+      <section>
+        <iframe src="./examples/app-shell/app-shell.html"></iframe>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Templates?</h2>
+        <pre><code class="language-html">&lt;template>...&lt;/template></code></pre>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>TypeScript</h2>
+      </section>
+      <section>
+        <h3>TypeScript</h3>
+        <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#8-19'></code></pre>
+      </section>
+      <section>
+        <h3>TypeScript</h3>
+        <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#21-30'></code></pre>
+      </section>
+      <section>
+        <h3>TypeScript</h3>
+        <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#32-40'></code></pre>
+      </section>
+      <section>
+        <h3>Annotation</h3>
+        <pre><code class="language-typescript" data-sample='examples/icon/lifecycle/web-component.ts'></code></pre>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>SCSS</h2>
+        <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#6'></code></pre>
+        <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#23-24'></code></pre>
+      </section>
+      <section>
+        <h2>WebPack / sass-to-string</h2>
+        <pre><code class="language-typescript" data-sample='examples/icon/webpack.config.js#3,15,16,21-32'></code></pre>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Storybook</h2>
+      </section>
+      <section>
+        <img src="images/storybook.png" alt="">
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>AutoComplete</h2>
+      </section>
+      <section>
+        <h3>Intellj Idea</h3>
+        <a href="https://github.com/JetBrains/web-types">
+          https://github.com/JetBrains/web-types
+        </a>
+        <pre><code class="language-json">{"web-types": "./src/web-types.json"}</code></pre>
+        <pre><code class="language-json" data-sample='examples/icon/web-types.json'></code></pre>
+      </section>
+      <section>
+        <h3>VS Code</h3>
+        <a href="https://github.com/microsoft/vscode-html-languageservice/blob/main/docs/customData.md">
+          https://github.com/microsoft/vscode-html-languageservice/blob/main/docs/customData.md
+        </a>
+        <pre><code class="language-json">{
+  "tags": [
+    {
+      "name": "icon",
+      "description": "Icon Display Component",
+      "attributes": [
+        { "name": "icon" },
+      ]
+    }
+  ]
+}</code></pre>
+
+      </section>
+    </section>
+    <section>
+      <h2>Thank You</h2>
+      <ul>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">
+            https://developer.mozilla.org/en-US/docs/Web/API/Web_components
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

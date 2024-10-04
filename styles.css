@@ -1,0 +1,55 @@
+
+@media print {
+  body.print-pdf .slide-menu-button {
+    display: none;
+  }
+}
+.hljs-tag {
+  background-color: transparent;
+}
+body > div.reveal {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0.1) 0%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(255,255,255,0) 100%
+  );
+}
+ul.code {
+  font-family: monospace;
+}
+
+.reveal section ul li code,
+.reveal code {
+  font-family: "Source Code Pro", monospace;
+}
+.reveal code .placeholder {
+  opacity: 0.65;
+}
+.reveal section img.scribble {
+  border: 1px solid silver;
+  background: white;
+  padding: 10px;
+  max-height: 500px;
+}
+.reveal section img.borderless {
+  border: none;
+  background: none;
+  padding: 0;
+  box-shadow: none;
+}
+.reveal section svg.inline-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.5em;
+  border: none;
+  background: transparent;
+  fill: white;
+}
+iframe {
+  border: none;
+  width: 800px;
+  height: 300px;
+  background: #fff;
+}

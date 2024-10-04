@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@thomasweinert/reveal-badges": "github:thomasweinert/reveal-badges",
+    "@thomasweinert/reveal-sampler": "github:thomasweinert/reveal-sampler",
+    "reveal.js": "^5.0.2",
+    "reveal.js-menu": "github:denehyg/reveal.js-menu"
+  }
+}
