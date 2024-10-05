@@ -10,7 +10,7 @@ class HelloComponent extends HTMLElement {
     style.textContent = `
       :host {
         color: green;
-        font-size: 26px;
+        font-size: 36px;
       }
     `;
     this._name = document.createElement('span');
