@@ -47,7 +47,7 @@
           </ul>
         </div>
       </section>
-      <section>
+      <section data-menu-title="Skills">
         <img src="./images/skills.svg" alt=""/>
       </section>
     </section>
@@ -76,11 +76,11 @@
         <ul>
           <li class="fragment">
             <h4>Autonomous Custom Element</h4>
-            <pre><code class="language-html">&lt;hello-world>&lt;/hello-world></code></pre>
+            <pre data-badge-position="br"><code class="language-html">&lt;hello-world>&lt;/hello-world></code></pre>
           </li>
           <li class="fragment">
             <h4>Custom Built-In Elements</h4>
-            <pre><code class="language-html">&lt;span is="hello-world">&lt;/span></code></pre>
+            <pre data-badge-position="br"><code class="language-html">&lt;span is="hello-world">&lt;/span></code></pre>
           </li>
         </ul>
       </section>
@@ -96,10 +96,51 @@
     <section>
       <section>
         <h2>Hello World</h2>
+      </section>
+      <section data-menu-title="Usage">
+        <pre><code class="language-html" data-sample='examples/hello-world/hello-world.html#11'></code></pre>
+        <iframe src="./examples/hello-world/hello-world.html"></iframe>
+      </section>
+      <section data-menu-title="Implementation">
         <pre><code class="language-js" data-sample='examples/hello-world/hello-world.component.js'></code></pre>
       </section>
+      <section data-menu-title="DOM">
+        <img src="./images/inspect/hello-world.png" alt=""/>
+      </section>
+    </section>
+    <section>
       <section>
-        <iframe src="./examples/hello-world/hello-world.html"></iframe>
+        <h2>Registration</h2>
+      </section>
+      <section>
+        <h2>Define</h2>
+        <pre><code class="language-js" data-sample='examples/hello-world/hello-world.component.js#13'></code></pre>
+      </section>
+      <section>
+        <h2>Naming</h2>
+        <ul>
+          <li>start with an ASCII lowercase letter (a-z)</li>
+          <li>>= 1 hyphen</li>
+          <li>not contain any ASCII uppercase letters</li>
+          <li>not reserved name</li>
+        </ul>
+        <pre><code class="language-text">"-" | "." | [0-9] | "_" | [a-z] | #xB7 | [#xC0-#xD6] |
+[#xD8-#xF6] | [#xF8-#x37D] | [#x37F-#x1FFF] |
+[#x200C-#x200D] | [#x203F-#x2040] | [#x2070-#x218F] |
+[#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] |
+[#xFDF0-#xFFFD] | [#x10000-#xEFFFF]</code></pre>
+      </section>
+      <section>
+        <h2>CustomElementRegistry</h2>
+        <ul>
+          <li>define(name, constructor)</li>
+          <li>get(name)</li>
+          <li>getName(constructor)</li>
+          <li>upgrade(root)</li>
+          <li>whenDefined(name)
+            <ul>:not(:defined)</ul>
+          </li>
+        </ul>
       </section>
     </section>
     <section>
@@ -107,15 +148,22 @@
         <h2>API</h2>
       </section>
       <section>
-        <h2>Constructor Restrictions</h2>
+        <h2>Class/Constructor</h2>
         <ul>
-          <li>No Attributes Write
+          <li>Extend HTMLElement</li>
+          <li>Call parent constructor</li>
+          <li>
+            Restrictions!
             <ul>
-              <li>No DataSet Write</li>
-              <li>No ClassList Write</li>
+              <li>No Attributes Write
+                <ul>
+                  <li>No DataSet Write</li>
+                  <li>No ClassList Write</li>
+                </ul>
+              </li>
+              <li>No Global Event Listeners</li>
             </ul>
           </li>
-          <li>No Global Event Listeners</li>
         </ul>
       </section>
       <section>
@@ -128,45 +176,50 @@
         <pre><code class="language-js"
                    data-sample='examples/click-tracker/click-tracker.component.js#19-21'></code></pre>
       </section>
-      <section>
+      <section data-menu-title="Display">
         <iframe src="./examples/click-tracker/click-tracker.html"></iframe>
       </section>
       <section>
         <h2>AttributeChanged Callback</h2>
         <pre><code class="language-js" data-sample='examples/hello/hello.component.js#1-6,18-27'></code></pre>
       </section>
-      <section>
+      <section data-menu-title="Usage">
         <pre><code class="language-html" data-sample='examples/hello/hello.html#12,17-19'></code></pre>
         <iframe src="./examples/hello/hello.html"></iframe>
       </section>
+    </section>
+    <section>
       <section>
         <h2>Styles</h2>
-        <pre><code class="language-js" data-sample='examples/hello-styled/hello.component.js#1,7-21'></code></pre>
       </section>
-      <section>
+      <section data-menu-title="Display">
         <iframe src="./examples/hello-styled/hello.html"></iframe>
+      </section>
+      <section data-menu-title="Implementation">
+        <pre><code class="language-js" data-sample='examples/hello-styled/hello.component.js#1,7-21'></code></pre>
       </section>
     </section>
     <section>
       <section>
         <h2>Slots</h2>
       </section>
-      <section>
-        <pre><code class="language-js" data-sample='examples/app-shell/app-shell.component.js#1-15'></code></pre>
-      </section>
-      <section>
-        <pre><code class="language-js" data-sample='examples/app-shell/app-shell.component.js#16-26'></code></pre>
-      </section>
-      <section>
+      <section data-menu-title="Usage">
         <pre><code class="language-html" data-sample='examples/app-shell/app-shell.html#11-15'></code></pre>
+        <iframe src="./examples/app-shell/app-shell.html"></iframe>
+      </section>
+      <section data-menu-title="Implementation">
+        <pre><code class="language-js" data-sample='examples/app-shell/app-shell.component.js#17-28'></code></pre>
+      </section>
+      <section data-menu-title="Style">
+        <pre><code class="language-js" data-sample='examples/app-shell/app-shell.component.js#3-16'></code></pre>
       </section>
       <section>
-        <iframe src="./examples/app-shell/app-shell.html"></iframe>
+        <img src="./images/inspect/app-shell.png" alt=""/>
       </section>
     </section>
     <section>
       <section>
-        <h2>Templates?</h2>
+        <h2>Templates</h2>
         <pre><code class="language-html">&lt;template>...&lt;/template></code></pre>
       </section>
     </section>
@@ -174,15 +227,15 @@
       <section>
         <h2>TypeScript</h2>
       </section>
-      <section>
+      <section data-menu-title="Part 1">
         <h3>TypeScript</h3>
         <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#8-19'></code></pre>
       </section>
-      <section>
+      <section data-menu-title="Part 2">
         <h3>TypeScript</h3>
         <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#21-30'></code></pre>
       </section>
-      <section>
+      <section data-menu-title="Part 3">
         <h3>TypeScript</h3>
         <pre><code class="language-typescript" data-sample='examples/icon/icon.component.ts#32-40'></code></pre>
       </section>
@@ -206,7 +259,7 @@
       <section>
         <h2>Storybook</h2>
       </section>
-      <section>
+      <section data-menu-title="Screenshot">
         <img src="images/storybook.png" alt="">
       </section>
     </section>

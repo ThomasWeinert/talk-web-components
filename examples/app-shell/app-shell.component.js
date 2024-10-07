@@ -7,15 +7,19 @@ class AppShellComponent extends HTMLElement {
       :host {
         display: grid;
         grid-template-rows: 100px 10fr; 
+        gap: 8px;
       }
       slot {
         display: block;
         border: 1px solid blue;
       }
     `;
+
     const header = document.createElement('slot');
     header.setAttribute('name', 'header');
+
     const main =  document.createElement('slot');
+
     const shadowRoot = this.attachShadow({mode: 'closed'});
     shadowRoot.append(style, header, main);
   }
