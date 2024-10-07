@@ -9,6 +9,7 @@ An introduction into Web Components, a web standard to develop framework indepen
 * Registration
 * API By Example
 * Slots
+* Templates
 * TypeScript
 * Storybook
 * SCSS
