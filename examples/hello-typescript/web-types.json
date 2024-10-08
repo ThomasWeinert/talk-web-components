@@ -6,11 +6,11 @@
     "html": {
       "elements": [
         {
-          "name": "cui-icon",
-          "description": "Icon Display Component",
+          "name": "cui-hello",
+          "description": "Target of an hello",
           "attributes": [
             {
-              "name": "icon",
+              "name": "target"
             }
           ]
         }

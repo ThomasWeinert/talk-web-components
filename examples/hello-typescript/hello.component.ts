@@ -1,9 +1,14 @@
-class HelloComponent extends HTMLElement  {
+import { WebComponentAttributeChanged } from "../web-component/web-component-attribute-changed";
 
-  static observedAttributes = [
+class HelloComponent
+  extends HTMLElement
+  implements WebComponentAttributeChanged {
+
+  public static observedAttributes = [
     'target'
   ];
 
+  private readonly _name: HTMLSpanElement;
 
   constructor() {
     super();
@@ -15,7 +20,9 @@ class HelloComponent extends HTMLElement  {
     );
   }
 
-  attributeChangedCallback(name, _, newValue) {
+  public attributeChangedCallback(
+    name: string, _: string | null, newValue: string | null
+  ) {
     switch (name) {
       case 'target':
         this._name.textContent = newValue || '';
