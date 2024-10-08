@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Template</title>
+  </head>
+  <body>
+    <template id="example">Template Content</template>
+    <div id="output"></div>
+    <button id="trigger">Show Content</button>
+    <script>
+      document.getElementById('trigger').addEventListener(
+        'click',
+        () => {
+          const template = document.getElementById('example');
+          document.getElementById('output').append(
+            template.content.cloneNode(true)
+          );
+        }
+      );
+    </script>
+  </body>
+</html>
